@@ -8,6 +8,7 @@ steps:
   - id: "Building image from Dockerfile"
     name: 'docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/desafio-k8s-go:$SHORT_SHA', '-f', 'Dockerfile', './go_server']
+    env: ['GOPATH=.']
 
   - id: "Pushing image"
     name: 'docker'
